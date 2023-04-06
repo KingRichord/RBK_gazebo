@@ -32,5 +32,3 @@ target_link_libraries(communication
         ${OpenCV_LIBS}
         ${ZeroMQ_LIBRARIES}
 )
-target_compile_options(communication PRIVATE -O1 -g -mavx2 -mpclmul -mbmi -mlzcnt -fsanitize=address -Werror -Wall)
-target_link_options(communication PRIVATE -fsanitize=address)

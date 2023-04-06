@@ -3,18 +3,15 @@
 #include <Eigen/Geometry>
 #include <opencv2/opencv.hpp>
 #include <zmq.hpp>
-#include <thread>
-#include "sonic/sonic.h"
+#include "json.hpp"
 #include "ConvertImage.h"
-
-using PointerType = sonic_json::GenericJsonPointer<sonic_json::StringView>;
 class Talker {
 public:
 	Talker();
 	
 	~Talker();
 	void Init(const std::string &ip);
-	void Pub(sonic_json::Document &metadata);
+	void Pub(nlohmann::json &metadata);
 	void Pub(cv::Mat &imput);
 private:
 	std::thread sub_thread;
