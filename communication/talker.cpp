@@ -45,9 +45,9 @@ void Talker::Process()
 		zmq::mutable_buffer message;
 		if (subscriber.recv(message))
 		{
-			// auto reply_str = std::string(static_cast<char *>(message.data()), message.size());
-			// auto json_data = nlohmann::json::parse(reply_str);
-			// std::cout <<json_data<<std::endl;
+			auto reply_str = std::string(static_cast<char *>(message.data()), message.size());
+			auto json_data = nlohmann::json::parse(reply_str);
+			std::cout <<json_data<<std::endl;
 			// // // 将图像消息进行转换
 			// // cv::Mat foo = converter.str2mat( json_data["data"]);
 			// // cv::imshow("rec", foo);

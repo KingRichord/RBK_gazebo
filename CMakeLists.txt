@@ -14,13 +14,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 set(PROTO_GEN_DIR ${CMAKE_CURRENT_BINARY_DIR}/proto)
 include_directories(${PROTO_GEN_DIR})
 link_directories(${PROTO_GEN_DIR})
-add_subdirectory(proto)
+#add_subdirectory(proto)
 
 
 add_subdirectory(demos)
 add_subdirectory(communication)
 
 add_executable(RBK_gazebo main.cpp)
-target_link_libraries(RBK_gazebo gazebo_demos_proto ${GAZEBO_LIBRARIES})
+target_link_libraries(RBK_gazebo  ${GAZEBO_LIBRARIES})
 
 
